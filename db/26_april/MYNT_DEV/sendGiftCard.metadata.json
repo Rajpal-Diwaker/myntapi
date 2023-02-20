@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"82bc6ed6b927456d91e0d1c0f34fc862","collectionName":"sendGiftCard"}

@@ -1,0 +1,612 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20201229.200118.5839.0.001.json",
+    "dumpEventTime": "2020-12-29T20:01:19Z",
+    "dumpEventTimeStamp": "1609252280155",
+    "processId": 5839,
+    "cwd": "/var/www/html/gyandaiy_web",
+    "commandLine": [
+      "/usr/local/bin/node",
+      "./bin/www"
+    ],
+    "nodejsVersion": "v12.13.1",
+    "glibcVersionRuntime": "2.27",
+    "glibcVersionCompiler": "2.17",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "12.13.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.13.1/node-v12.13.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.13.1/node-v12.13.1.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "5.3.0-45-generic",
+    "osVersion": "#37~18.04.1-Ubuntu SMP Fri Mar 27 15:58:10 UTC 2020",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i5-4310U CPU @ 2.00GHz",
+        "speed": 1604,
+        "user": 9069600,
+        "nice": 2400,
+        "sys": 1280600,
+        "idle": 41099400,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-4310U CPU @ 2.00GHz",
+        "speed": 1539,
+        "user": 9135500,
+        "nice": 2400,
+        "sys": 1322000,
+        "idle": 40899600,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-4310U CPU @ 2.00GHz",
+        "speed": 1617,
+        "user": 9157500,
+        "nice": 1700,
+        "sys": 1336100,
+        "idle": 41164000,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-4310U CPU @ 2.00GHz",
+        "speed": 1713,
+        "user": 8185500,
+        "nice": 7600,
+        "sys": 1336700,
+        "idle": 42202800,
+        "irq": 0
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "wlp2s0b1",
+        "internal": false,
+        "mac": "ac:81:12:8e:b7:00",
+        "address": "192.168.225.65",
+        "netmask": "255.255.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "wlp2s0b1",
+        "internal": false,
+        "mac": "ac:81:12:8e:b7:00",
+        "address": "2409:4063:410a:816a:bd74:9b54:2dc:cac5",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "wlp2s0b1",
+        "internal": false,
+        "mac": "ac:81:12:8e:b7:00",
+        "address": "2409:4063:410a:816a:896a:caa7:48bf:96ac",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "wlp2s0b1",
+        "internal": false,
+        "mac": "ac:81:12:8e:b7:00",
+        "address": "fe80::bef1:e990:c681:cf33",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 3
+      }
+    ],
+    "host": "techugoanand-Latitude-E5440"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000b04935",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x00000000009db9e3",
+      "symbol": "node::OnFatalError(char const*, char const*) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b39f1e",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b3a299",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000ce5635",
+      "symbol": " [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000ce5cc6",
+      "symbol": "v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000cf1b5a",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000cf2a65",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000cf5478",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000cbbda7",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationType) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000000ff1e0b",
+      "symbol": "v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [/usr/local/bin/node]"
+    },
+    {
+      "pc": "0x0000000001374fd9",
+      "symbol": " [/usr/local/bin/node]"
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2169511936,
+    "totalCommittedMemory": 2160337720,
+    "usedMemory": 2094611224,
+    "availableMemory": 98616384,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 32568,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 25952112,
+        "capacity": 16759808,
+        "used": 3770872,
+        "available": 12988936
+      },
+      "old_space": {
+        "memorySize": 2108796928,
+        "committedMemory": 2107715088,
+        "capacity": 2105516112,
+        "used": 2065181408,
+        "available": 40334704
+      },
+      "code_space": {
+        "memorySize": 1736704,
+        "committedMemory": 1515264,
+        "capacity": 1238848,
+        "used": 1238848,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 2101248,
+        "committedMemory": 2062208,
+        "capacity": 1491440,
+        "used": 1491440,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 23011328,
+        "committedMemory": 23011328,
+        "capacity": 22892808,
+        "used": 22892808,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 3552,
+        "used": 3552,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16759808,
+        "used": 0,
+        "available": 16759808
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 307.859,
+    "kernelCpuSeconds": 6.64088,
+    "cpuConsumptionPercent": 83.6437,
+    "maxRss": 2373070848,
+    "pageFaults": {
+      "IORequired": 116,
+      "IONotRequired": 832574
+    },
+    "fsActivity": {
+      "reads": 22512,
+      "writes": 10456
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 228.99,
+    "kernelCpuSeconds": 4.71653,
+    "cpuConsumptionPercent": 62.1559,
+    "fsActivity": {
+      "reads": 21720,
+      "writes": 0
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "GJS_DEBUG_TOPICS": "JS ERROR;JS LOG",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "npm_config_cache_lock_stale": "60000",
+    "npm_config_ham_it_up": "",
+    "npm_package_dependencies_fs": "0.0.1-security",
+    "npm_config_legacy_bundling": "",
+    "npm_config_sign_git_tag": "",
+    "USER": "techugo-anand",
+    "LANGUAGE": "en_IN:en",
+    "npm_package_dependencies_bcryptjs": "^2.4.3",
+    "npm_package_dependencies_multiparty": "^4.2.1",
+    "npm_config_user_agent": "npm/6.12.1 node/v12.13.1 linux x64",
+    "npm_config_always_auth": "",
+    "TEXTDOMAIN": "im-config",
+    "XDG_SEAT": "seat0",
+    "npm_config_bin_links": "true",
+    "npm_config_key": "",
+    "SSH_AGENT_PID": "1649",
+    "XDG_SESSION_TYPE": "x11",
+    "GIT_ASKPASS": "/usr/share/code/resources/app/extensions/git/dist/askpass.sh",
+    "npm_package_dependencies_urlencode": "^1.1.0",
+    "npm_package_devDependencies_nodemon": "^1.19.4",
+    "npm_config_allow_same_version": "",
+    "npm_config_description": "true",
+    "npm_config_fetch_retries": "2",
+    "npm_config_heading": "npm",
+    "npm_config_if_present": "",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_user": "",
+    "npm_node_execpath": "/usr/local/bin/node",
+    "SHLVL": "2",
+    "npm_package_devDependencies_chai_http": "^4.3.0",
+    "npm_config_prefer_online": "",
+    "npm_config_noproxy": "",
+    "CHROME_DESKTOP": "code-url-handler.desktop",
+    "QT4_IM_MODULE": "xim",
+    "HOME": "/home/techugo-anand",
+    "npm_package_dependencies_html_pdf": "^2.2.0",
+    "npm_package_devDependencies_mocha": "^6.2.2",
+    "npm_config_force": "",
+    "DESKTOP_SESSION": "ubuntu",
+    "TERM_PROGRAM_VERSION": "1.45.1",
+    "npm_config_only": "",
+    "npm_config_read_only": "",
+    "GIO_LAUNCHED_DESKTOP_FILE": "/usr/share/applications/code.desktop",
+    "npm_package_dependencies_cloudinary": "^1.21.0",
+    "npm_package_dependencies_convert_excel_to_json": "^1.7.0",
+    "npm_package_dependencies_node_ses": "^3.0.2",
+    "npm_package_devDependencies_chai": "^4.2.0",
+    "npm_config_cache_min": "10",
+    "npm_config_init_license": "ISC",
+    "GNOME_SHELL_SESSION_MODE": "ubuntu",
+    "GTK_MODULES": "gail:atk-bridge",
+    "VSCODE_GIT_ASKPASS_MAIN": "/usr/share/code/resources/app/extensions/git/dist/askpass-main.js",
+    "npm_package_dependencies_razorpay": "^2.0.6",
+    "npm_config_editor": "vi",
+    "npm_config_rollback": "true",
+    "npm_config_tag_version_prefix": "v",
+    "VSCODE_GIT_ASKPASS_NODE": "/usr/share/code/code",
+    "npm_package_dependencies_swagger_ui_express": "^4.1.4",
+    "npm_config_cache_max": "Infinity",
+    "npm_config_timing": "",
+    "npm_config_userconfig": "/home/techugo-anand/.npmrc",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "npm_package_dependencies_dotenv": "^8.2.0",
+    "npm_package_dependencies_moment": "^2.24.0",
+    "npm_package_devDependencies_nyc": "^14.1.1",
+    "npm_config_engine_strict": "",
+    "npm_config_init_author_name": "",
+    "npm_config_init_author_url": "",
+    "npm_config_preid": "",
+    "npm_config_tmp": "/tmp",
+    "COLORTERM": "truecolor",
+    "GIO_LAUNCHED_DESKTOP_FILE_PID": "3557",
+    "npm_package_dependencies_node_ccavenue": "^1.0.5",
+    "npm_package_description": "[![Author](http://img.shields.io/badge/author-@maitraysuthar-blue.svg)](https://www.linkedin.com/in/maitray-suthar/) [![GitHub license](https://img.shields.io/github/license/maitraysuthar/rest-api-nodejs-mongodb.svg)](https://github.com/maitraysuthar/rest-api-nodejs-mongodb/blob/master/LICENSE)  ![GitHub repo size](https://img.shields.io/github/repo-size/maitraysuthar/rest-api-nodejs-mongodb) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/b3eb80984adc4671988ffb22d6ad83df)](https://www.codacy.com/manual/maitraysuthar/rest-api-nodejs-mongodb?utm_source=github.com&utm_medium=referral&utm_content=maitraysuthar/rest-api-nodejs-mongodb&utm_campaign=Badge_Coverage) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3eb80984adc4671988ffb22d6ad83df)](https://www.codacy.com/manual/maitraysuthar/rest-api-nodejs-mongodb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maitraysuthar/rest-api-nodejs-mongodb&amp;utm_campaign=Badge_Grade) ![Travis (.com)](https://img.shields.io/travis/com/maitraysuthar/rest-api-nodejs-mongodb)",
+    "npm_config_depth": "Infinity",
+    "npm_config_package_lock_only": "",
+    "npm_config_save_dev": "",
+    "npm_config_usage": "",
+    "npm_package_readmeFilename": "README.md",
+    "npm_config_metrics_registry": "https://registry.npmjs.org/",
+    "npm_config_cafile": "",
+    "npm_config_otp": "",
+    "npm_config_package_lock": "true",
+    "npm_config_progress": "true",
+    "npm_config_https_proxy": "",
+    "npm_config_save_prod": "",
+    "IM_CONFIG_PHASE": "2",
+    "npm_package_scripts_dev": "nodemon ./bin/www",
+    "npm_package_dependencies_async": "^3.2.0",
+    "npm_config_audit": "true",
+    "npm_config_cidr": "",
+    "npm_config_onload_script": "",
+    "npm_config_sso_type": "oauth",
+    "LOGNAME": "techugo-anand",
+    "GTK_IM_MODULE": "ibus",
+    "npm_package_dependencies_bcrypt": "^3.0.8",
+    "npm_config_rebuild_bundle": "true",
+    "npm_config_save_bundle": "",
+    "npm_config_shell": "/bin/bash",
+    "_": "/usr/local/bin/npm",
+    "npm_package_private": "true",
+    "npm_package_dependencies_express": "~4.16.0",
+    "npm_config_dry_run": "",
+    "npm_config_format_package_lock": "true",
+    "npm_config_prefix": "/usr/local",
+    "npm_package_scripts_lint": "eslint --fix --config .eslintrc.json \"**/*.js\"",
+    "npm_config_scope": "",
+    "npm_config_browser": "",
+    "npm_config_cache_lock_wait": "10000",
+    "npm_config_ignore_prepublish": "",
+    "npm_config_registry": "https://registry.npmjs.org/",
+    "npm_config_save_optional": "",
+    "npm_config_searchopts": "",
+    "npm_config_versions": "",
+    "USERNAME": "techugo-anand",
+    "XDG_SESSION_ID": "2",
+    "TERM": "xterm-256color",
+    "npm_package_dependencies_path": "^0.12.7",
+    "npm_package_dependencies_stripe": "^8.63.0",
+    "npm_config_cache": "/home/techugo-anand/.npm",
+    "npm_config_proxy": "",
+    "npm_config_send_metrics": "",
+    "GNOME_DESKTOP_SESSION_ID": "this-is-deprecated",
+    "npm_package_scripts_start": "nodemon ./bin/www",
+    "npm_package_dependencies_mocha_lcov_reporter": "^1.3.0",
+    "npm_package_dependencies_textlocal": "^0.1.1",
+    "npm_config_global_style": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_version": "",
+    "WINDOWPATH": "2",
+    "npm_package_dependencies_bull": "^3.14.0",
+    "npm_package_dependencies_multer": "^1.4.2",
+    "npm_config_local_address": "",
+    "npm_config_viewer": "man",
+    "npm_config_node_gyp": "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
+    "PATH": "/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/var/www/html/gyandaiy_web/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "SESSION_MANAGER": "local/techugoanand-Latitude-E5440:@/tmp/.ICE-unix/1554,unix/techugoanand-Latitude-E5440:/tmp/.ICE-unix/1554",
+    "npm_package_name": "gyan-dairy-rest-api-nodejs-mongodb",
+    "npm_package_dependencies_aws_config": "^1.4.0",
+    "npm_package_dependencies_jimp": "^0.10.1",
+    "npm_package_dependencies_nodemailer": "^6.4.6",
+    "npm_config_audit_level": "low",
+    "npm_config_prefer_offline": "",
+    "NODE": "/usr/local/bin/node",
+    "XDG_MENU_PREFIX": "gnome-",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "npm_config_color": "true",
+    "npm_config_sign_git_commit": "",
+    "DISPLAY": ":0",
+    "npm_package_dependencies_datauri": "^3.0.0",
+    "npm_package_dependencies_express_jwt": "^5.3.1",
+    "npm_config_fetch_retry_mintimeout": "10000",
+    "npm_config_maxsockets": "50",
+    "npm_config_offline": "",
+    "npm_config_sso_poll_frequency": "500",
+    "LANG": "en_GB.UTF-8",
+    "XDG_CURRENT_DESKTOP": "Unity",
+    "npm_package_dependencies_codacy_coverage": "^3.4.0",
+    "npm_package_dependencies_express_validator": "^6.2.0",
+    "npm_package_devDependencies_eslint": "^6.5.1",
+    "npm_config_umask": "0002",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "TERM_PROGRAM": "vscode",
+    "XDG_SESSION_DESKTOP": "ubuntu",
+    "XMODIFIERS": "@im=ibus",
+    "VSCODE_GIT_IPC_HANDLE": "/run/user/1000/vscode-git-46114d92b2.sock",
+    "XAUTHORITY": "/run/user/1000/gdm/Xauthority",
+    "npm_package_dependencies_aws_sdk": "^2.696.0",
+    "npm_package_gitHead": "6de78b5cd783eee16b3cd30ecd1252ce32a6cbd8",
+    "npm_config_fetch_retry_maxtimeout": "60000",
+    "npm_config_loglevel": "notice",
+    "npm_config_logs_max": "10",
+    "npm_config_message": "%s",
+    "npm_lifecycle_script": "nodemon ./bin/www",
+    "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
+    "npm_package_scripts_test": "nyc _mocha --timeout 10000 --exit --report lcovonly -- -R spec",
+    "npm_package_dependencies_fcm_node": "^1.5.2",
+    "npm_config_ca": "",
+    "npm_config_cert": "",
+    "npm_config_global": "",
+    "npm_config_link": "",
+    "SHELL": "/bin/bash",
+    "npm_package_version": "1.0.0",
+    "npm_config_access": "",
+    "npm_config_also": "",
+    "npm_config_save": "true",
+    "npm_config_unicode": "true",
+    "npm_lifecycle_event": "start",
+    "QT_ACCESSIBILITY": "1",
+    "GDMSESSION": "ubuntu",
+    "npm_package_dependencies_cors": "^2.8.5",
+    "npm_package_dependencies_crypto": "^1.0.1",
+    "npm_package_dependencies_mongoose_auto_increment": "^5.0.1",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"start\"],\"original\":[\"start\"]}",
+    "npm_config_before": "",
+    "npm_config_long": "",
+    "npm_config_production": "",
+    "npm_config_searchlimit": "20",
+    "npm_config_unsafe_perm": "true",
+    "npm_config_update_notifier": "true",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "npm_config_auth_type": "legacy",
+    "npm_config_node_version": "12.13.1",
+    "npm_config_tag": "latest",
+    "npm_package_dependencies_debug": "~2.6.9",
+    "npm_config_git_tag_version": "true",
+    "npm_config_commit_hooks": "true",
+    "npm_config_script_shell": "",
+    "npm_config_shrinkwrap": "true",
+    "TEXTDOMAINDIR": "/usr/share/locale/",
+    "GJS_DEBUG_OUTPUT": "stderr",
+    "GPG_AGENT_INFO": "/run/user/1000/gnupg/S.gpg-agent:0:1",
+    "npm_package_dependencies_mongoose": "^5.7.6",
+    "npm_package_dependencies_swagger_jsdoc": "^4.0.0",
+    "npm_config_fetch_retry_factor": "10",
+    "npm_config_save_exact": "",
+    "npm_config_strict_ssl": "true",
+    "XDG_VTNR": "2",
+    "QT_IM_MODULE": "xim",
+    "npm_config_dev": "",
+    "npm_config_globalconfig": "/usr/local/etc/npmrc",
+    "npm_config_init_module": "/home/techugo-anand/.npm-init.js",
+    "npm_config_parseable": "",
+    "PWD": "/var/www/html/gyandaiy_web",
+    "npm_package_dependencies_node_cron": "^2.0.3",
+    "npm_config_globalignorefile": "/usr/local/etc/npmignore",
+    "npm_execpath": "/usr/local/lib/node_modules/npm/bin/npm-cli.js",
+    "CLUTTER_IM_MODULE": "xim",
+    "XDG_DATA_DIRS": "/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop",
+    "XDG_CONFIG_DIRS": "/etc/xdg/xdg-ubuntu:/etc/xdg",
+    "npm_config_cache_lock_retries": "10",
+    "npm_config_searchstaleness": "900",
+    "npm_package_dependencies_cookie_parser": "~1.4.3",
+    "npm_config_node_options": "",
+    "npm_config_save_prefix": "^",
+    "npm_config_scripts_prepend_node_path": "warn-only",
+    "npm_package_dependencies_file_system": "^2.2.2",
+    "npm_package_dependencies_jsonwebtoken": "^8.5.1",
+    "npm_config_group": "1000",
+    "npm_config_init_author_email": "",
+    "npm_config_searchexclude": "",
+    "npm_config_git": "git",
+    "npm_config_optional": "true",
+    "npm_package_dependencies_morgan": "~1.9.0",
+    "npm_package_dependencies_querystring": "^0.2.0",
+    "npm_config_json": "",
+    "INIT_CWD": "/var/www/html/gyandaiy_web",
+    "MONGODB_URL": "mongodb://127.0.0.1:27017/gyanDairy",
+    "NODE_ENV": "dev",
+    "SERVER_IP": "https://gyanfresh.gyandairy.com",
+    "PORT": "3000",
+    "JWT_SECRET": "YourSecret",
+    "JWT_TIMEOUT_DURATION": "2 hours",
+    "EMAIL_SMTP_HOST": "email-smtp.us-east-1.amazonaws.com",
+    "EMAIL_SMTP_PORT": "587",
+    "EMAIL_SMTP_USERNAME": "AKIASZBAW35XDVXRX4X4",
+    "EMAIL_SMTP_PASSWORD": "BH1l9mdwFPLG0WLLdSplZychSVFhyEDbG5w92Yo4peX4",
+    "EMAIL_SMTP_SECURE": "false",
+    "EMAIL_SMTP_FROM": "care@gyandairy.com",
+    "CCAV_merchant_id": "264039",
+    "CCAV_test_working_key": "\"A4AAC647548C8134E7326F4C212852FC\"",
+    "saltRounds": "10",
+    "RAZOR_key_id": "rzp_test_HlsGVz1qXFvvxr",
+    "RAZOR_key_secret": "\"tA688FiaZoBAkHa2grzDHjSE\"",
+    "password": "$2b$10$sJ7O0ggP3SwSGJg9LiLFNuaM4pogJW8pr10gTyl3nEgFKITbrju1i #123456",
+    "STRIPE_SECRATE_KEY": "sk_test_51GuYfsKaRmdS0PgZLWxfy52HvAArFjziKsBj1o7HdWT8yICrhT6WcJ6p12U7IfJrCrQfIhpSXPkm54W6eFxP3Kp200ElVdQJCh"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 16777216,
+      "hard": 16777216
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 31280,
+      "hard": 31280
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2"
+  ]
+}

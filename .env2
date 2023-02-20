@@ -1,0 +1,26 @@
+MONGODB_URL=mongodb://127.0.0.1:27017/MYNT_DEV
+#MONGODB_URL=mongodb://13.126.131.184:27017/MYNT_DEV
+#MONGODB_URL_PROD=mongodb://admin:ukevespodE8TOp:13.126.131.184:27017/MYNT_DEV
+# Example Connection String:-
+# mongodb://127.0.0.1:27017/rest-api-nodejs-mongodb
+# mongodb://[MongodbHost]:[PORT]/[DatabaseName]
+NODE_ENV=dev
+#PORT=4000
+PORT=2022
+
+JWT_SECRET=YourSecret
+# Example Secret:-  abcdefghijklmnopqrstuvwxyz1234567890
+
+JWT_TIMEOUT_DURATION="2 hours"
+# You can place duration available here: https://github.com/auth0/node-jsonwebtoken#usage
+# Search for "expiresIn" option on above link.
+
+EMAIL_SMTP_HOST=email-smtp.us-east-1.amazonaws.com
+EMAIL_SMTP_PORT=8000
+EMAIL_SMTP_USERNAME=AKIAIYEDWUZM4MICMLCA
+EMAIL_SMTP_PASSWORD=BBcs2zsmWZ47VU7ilbL+o9zBhj2bn5+orS38zQLuTM+z
+# true for 465, false for other ports
+EMAIL_SMTP_SECURE=true
+saltRounds=10
+password=$2b$10$sJ7O0ggP3SwSGJg9LiLFNuaM4pogJW8pr10gTyl3nEgFKITbrju1i #123456
+TZ = 'Asia/Calcutta'

@@ -1,0 +1,5217 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.0",
+    "title": "sdfasfd",
+    "description": "Gyan Dairy",
+    "license": {
+      "name": "Proprietary",
+      "url": "localhost"
+    }
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+  
+    "/api/admin/v1/getTown": {
+      "get": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Towns list",
+        "description": "This API gives Towns list.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/api/admin/v1/getCluster/{townId}": {
+      "get": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Cluster list",
+        "description": "This API gives Cluster list of a town.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "townId",
+            "description": "Enter townId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/api/admin/v1/addCategory": {
+      "post": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Add category",
+        "description": "This API will add product category.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "categoryName",
+            "description": "Enter categoryName",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "files",
+            "description": "Enter category image",
+            "in": "formData",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/api/admin/v1/categoryList": {
+      "post": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Get category",
+        "description": "This API will give product categories.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/api/admin/v1/addProduct": {
+      "post": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Add product",
+        "description": "This API will add product.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "itemName",
+            "description": "Enter itemName",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "files",
+            "description": "Enter product image",
+            "in": "formData",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "name": "categoryId",
+            "description": "Enter categoryId",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "description": "Enter description",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "quantity",
+            "description": "Enter quantity",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "price",
+            "description": "Enter price",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "packingtype",
+            "description": "Enter packingtype",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "enum":["BOX"]
+          },
+          {
+            "name": "GST",
+            "description": "Enter GST",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "buyLimit",
+            "description": "Enter buyLimit",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "enum": ["ONCE","TWICE","MULTIPLE"]
+          },
+          {
+            "name": "nutritionInformation",
+            "description": "Enter nutritionInformation",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "packingDetails",
+            "description": "Enter packingDetails",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "keyFeatures",
+            "description": "Enter keyFeatures",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "unit",
+            "description": "Enter unit",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "enum": ["KG","GM", "ML", "L"]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/api/admin/v1/productList": {
+      "post": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Get all product of a category",
+        "description": "This API will give all product of a category.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "description": "Enter categoryId",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/api/admin/v1/categoryDetail": {
+      "post": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Get category Detail",
+        "description": "This API will give category Detail.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "description": "Enter categoryId",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+
+    "/api/admin/v1/productDetail": {
+      "post": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Get product Detail",
+        "description": "This API will give product Detail.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "description": "Enter productId",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/api/admin/v1/createAppHomeItem": {
+      "post": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Add App Home Item",
+        "description": "This API will create App Home Item.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "title",
+            "description": "Enter title",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subtitle",
+            "description": "Enter subtitle",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "items",
+            "description": "Enter items",
+            "in": "formData",
+            "required": true,
+            "type": "array"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/api/admin/v1/addTown": {
+      "post": {
+        "tags": [
+          "ADMIN"
+        ],
+        "summary": "Add town",
+        "description": "This API will Add town.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "location",
+            "description": "Enter location",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+
+
+
+
+    "/device_token": {
+      "post": {
+        "tags": [
+          "Firebase"
+        ],
+        "summary": "Add device token for Notification",
+        "description": "This API updates devicetoken of users.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "device_token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/notification": {
+      "get": {
+        "tags": [
+          "Firebase"
+        ],
+        "summary": "Send Notification (Used by Admin)",
+        "description": "This API send notification to bulk of users.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "notification_id",
+            "description": "Enter Notification Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "university_id",
+            "description": "Enter Univeristy Id (Not in use)",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "course_id",
+            "description": "Enter Course Id (Not in use)",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "pageNo",
+            "description": "Enter Page Number (Not in use)",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "perPage",
+            "description": "Enter Size Value (Not in use)",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getNotification": {
+      "get": {
+        "tags": [
+          "Firebase"
+        ],
+        "summary": "App Notifications",
+        "description": "This API gives a list of all notifications for App.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gi_user_id",
+            "description": "Enter User unique id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/userNotification": {
+      "get": {
+        "tags": [
+          "Firebase"
+        ],
+        "summary": "App Notifications",
+        "description": "This API gives a list of all notifications for App.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/updateNotification": {
+      "put": {
+        "tags": [
+          "Firebase"
+        ],
+        "summary": "App Notifications",
+        "description": "This API updates the notification status (Read or Unread) of User.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "msg_id",
+            "description": "Enter Notification id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "description": "Enter Notification Status(Read: 1, Unread: 0)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/domains": {
+      "get": {
+        "tags": [
+          "Get Email Domains"
+        ],
+        "summary": "App Version",
+        "description": "This API gives a list of email domains.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/sendSMS": {
+      "post": {
+        "tags": [
+          "User Email and Mobile No Verification"
+        ],
+        "summary": "Glossaread-SMS",
+        "description": "This API is used for sending sms to user.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "mobile",
+            "description": "Enter Mobile No",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/karix-dlr": {
+      "post": {
+        "tags": [
+          "User Email and Mobile No Verification"
+        ],
+        "summary": "Karix DLR",
+        "description": "This API is used for updating sms record.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sid",
+            "description": "Message Id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dest",
+            "description": "Destination Mobile No",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "stime",
+            "description": "Timestamp from Karix Servers",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dtime",
+            "description": "Timestamp received by Karix",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dlr_status",
+            "description": "Final status of the message",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "reason",
+            "description": "Reason for the final status",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/blobcity": {
+      "get": {
+        "tags": [
+          "BlobCity"
+        ],
+        "summary": "Glossaread-BlobCity",
+        "description": "This API is used for sending information regarding purchased plan.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "description": "Enter Name",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "description": "Enter Email",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "plan",
+            "description": "Enter Plan type",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/peak-blobcity": {
+      "get": {
+        "tags": [
+          "BlobCity"
+        ],
+        "summary": "Glossaread-BlobCity",
+        "description": "This API is used for sending information regarding purchased plan.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "description": "Enter Name",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "description": "Enter Email",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "plan",
+            "description": "Enter Plan type",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/monitor": {
+      "get": {
+        "tags": [
+          "Monitoring Backend Details"
+        ],
+        "summary": "Plan Details",
+        "description": "This API gives a Plan Details of User.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/books": {
+      "get": {
+        "tags": [
+          "Solr"
+        ],
+        "summary": "Get data from Solr",
+        "description": "This API gives Solr data..",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "arti_id",
+            "description": "Enter Book Id",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "auth_id",
+            "description": "Enter Author Id",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "categ_id",
+            "description": "Enter Category Id",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "publ_id",
+            "description": "Enter Publisher Id",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "auth_combine_id",
+            "description": "Enter Multiple Author Id (Ex:1,2) (Default 0)",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "publ_combine_id",
+            "description": "Enter Multiple Publisher Id (Ex:1,2) (Default 0)",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "arti_article_title",
+            "description": "Enter Book Name",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "auth_author_name",
+            "description": "Enter Author Name",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "categ_category_name",
+            "description": "Enter Category Name",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "publ_publisher_name",
+            "description": "Enter Publisher Name",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "sort",
+            "description": "Do you want to apply filter on prices from higher to lower (0: Low to High, 1: High to Low, 2: Latest Book, Default:0)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "start_price",
+            "description": "Enter Start Price",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "end_price",
+            "description": "Enter End Price",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "ap_currency_id",
+            "description": "Enter Currency ID (Rs(INR)- 1, $(US)- 2)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pageNo",
+            "description": "Enter Page Number",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "perPage",
+            "description": "Enter Size Value",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/sort": {
+      "get": {
+        "tags": [
+          "Solr"
+        ],
+        "summary": "Get sort data from Solr",
+        "description": "This API gives Solr data..",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sort",
+            "description": "Do you want to apply filter on prices from higher to lower (0: Low to High, 1: High to Low, 2: Latest Book, Default:0)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "start_price",
+            "description": "Enter Start Price",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "end_price",
+            "description": "Enter End Price",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "currency_id",
+            "description": "Enter Currency ID",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "pageNo",
+            "description": "Enter Page Number",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "perPage",
+            "description": "Enter Size Value",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/search": {
+      "post": {
+        "tags": [
+          "Solr"
+        ],
+        "summary": "Get data from Solr",
+        "description": "This API gives Solr data..",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "title",
+            "description": "Enter Search Title",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/cash": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Cashback API's",
+        "description": "Check for API response",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/deleteCashback": {
+      "delete": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Delete Cashback API's",
+        "description": "Check for API response",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/check-balance": {
+      "get": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Check Cashgram Balance",
+        "description": "Check for API response",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/solr_push": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Add data into Solr (Used by Admin)",
+        "description": "This API insert data into Solr.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/sort_push": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Add Sort data into Solr (Used by Admin)",
+        "description": "This API insert data into Solr.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/deleteLogs": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Delete logs (Used by Admin)",
+        "description": "This API deletes the logs.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getReports/{start_date}/{end_date}": {
+      "get": {
+        "tags": [
+          "Get User Reports"
+        ],
+        "summary": "User Details",
+        "description": "Here, Admin can get Reports of Registered users between the dates.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "start_date",
+            "description": "Enter Start Date (YYYY-MM-DD)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "end_date",
+            "description": "Enter End Date (YYYY-MM-DD)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getAcademicDetails": {
+      "get": {
+        "tags": [
+          "Get Academic List"
+        ],
+        "summary": "Academic Details",
+        "description": "This API gives a list of all universities, colleges, courses, streams, years, semester names.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getCollegeAccToUniv": {
+      "get": {
+        "tags": [
+          "Get Academic List"
+        ],
+        "summary": "College name List according to Univeristy",
+        "description": "Here, user can choose college name as per University selection",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "university_id",
+            "description": "Enter Univeristy Id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getCourseAccToCollegeAndUniv": {
+      "get": {
+        "tags": [
+          "Get Academic List"
+        ],
+        "summary": "Course List according to College and Univerisity",
+        "description": "Here, user can choose course as per College and University selection",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "university_id",
+            "description": "Enter University Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "college_id",
+            "description": "Enter College Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getStreamsAccToCourse": {
+      "get": {
+        "tags": [
+          "Get Academic List"
+        ],
+        "summary": "Stream List according to Course",
+        "description": "Here, user can choose stream as per Course selection",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "course_id",
+            "description": "Enter Course Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getYearAccToCourse": {
+      "get": {
+        "tags": [
+          "Get Academic List"
+        ],
+        "summary": "Year name List according to Course",
+        "description": "Here, user can choose year name as per Course selection",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "year_id",
+            "description": "Enter Year Id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getSemesterAccToYear": {
+      "get": {
+        "tags": [
+          "Get Academic List"
+        ],
+        "summary": "Semester List according to year",
+        "description": "Here, user can choose semester as per year selection",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "course_id",
+            "description": "Enter Course Id",
+            "in": "query",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "stream_id",
+            "description": "Enter Stream Id",
+            "in": "query",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "year_id",
+            "description": "Enter Year Id",
+            "in": "query",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getYearAndSemList": {
+      "get": {
+        "tags": [
+          "Get Academic List"
+        ],
+        "summary": "Study Material Status",
+        "description": "Here, user can see availablity of years and semesters",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "university_id",
+            "description": "Enter your University Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "course_id",
+            "description": "Enter your Course Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getStudyMaterialStatus": {
+      "get": {
+        "tags": [
+          "Get Academic List"
+        ],
+        "summary": "Study Material Status",
+        "description": "Here, user can see availablity of study material",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "university_id",
+            "description": "Enter your University Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "course_id",
+            "description": "Enter your Course Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "stream_id",
+            "description": "Enter your Stream Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "year_id",
+            "description": "Enter your Year Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "semester_id",
+            "description": "Enter your Semester Id (Default value 0 for year based course)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/existEmailAndMobile": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Check for Student Email and Mobile",
+        "description": "This API is used for checking of existing email and mobile of student.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "description": "Enter your Email",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "mobile",
+            "description": "Enter your Mobile No",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/existEmail": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Check for Student Email (WEB)",
+        "description": "This API is used for checking of existing email of student.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "description": "Enter your Email",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/existMobile": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Check for Student Mobile (WEB)",
+        "description": "This API is used for checking of existing mobile of student.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "mobile",
+            "description": "Enter your Mobile No",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Registering new Student",
+        "description": "This API is used for registering details of new student.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "full_name",
+            "description": "Enter your full name",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "description": "Enter your Email",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "description": "Enter Password",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "mobile",
+            "description": "Enter your Mobile No",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "university_id",
+            "description": "Enter your University Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "college_id",
+            "description": "Enter your College Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "course_id",
+            "description": "Enter your Course Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "stream_id",
+            "description": "Enter your Stream Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "year_id",
+            "description": "Enter your Year Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "semester_id",
+            "description": "Enter your Semester Id (Default value -1 for year based course)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "device_type",
+            "description": "Enter Device Type (For Android: 1, For Web: 0)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/add-academic-details": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Add Academic Details",
+        "description": "This API is used for adding academic details of new student.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "university_id",
+            "description": "Enter your University Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "college_id",
+            "description": "Enter your College Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "course_id",
+            "description": "Enter your Course Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "stream_id",
+            "description": "Enter your Stream Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "year_id",
+            "description": "Enter your Year Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "semester_id",
+            "description": "Enter your Semester Id (Default value -1 for year based course)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/referFriend": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Referring your friend",
+        "description": "This API is used for referring new student.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "text",
+            "description": "Enter Friend's Email or Mobile",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "is_email",
+            "description": "Enter Flag for email or mobile(Email: 1, Mobile: 0)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getReferLink": {
+      "get": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Refer Link",
+        "description": "This API gives a link for referring user.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getSkilledURL": {
+      "get": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Skilled URL",
+        "description": "This API gives a link for skilled module.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/sendNotification": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Firebase Notifcation",
+        "description": "This API is used for sending notification to user.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/setRewardPoints": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Reward Points",
+        "description": "This API is used for setting up reward points for user.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/generateCouponCodes": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Coupon Codes",
+        "description": "This API is used for generating coupon codes for all users.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/givePoints": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Referring your friend (Used by admin)",
+        "description": "This API is used for referring new student.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/subscriptionCashback": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Cashback",
+        "description": "This API gives cashback to new users on successfull payment.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/referralCashback": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Cashback",
+        "description": "This API gives cashback to referred users on successfull payment.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getRewardPoints": {
+      "get": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Reward Points",
+        "description": "This API is used for getting reward points of user.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Check for Valid user or not.",
+        "description": "This API validates email and password of Customer",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "description": "Enter Email",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "description": "Enter Password",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/auto-login": {
+      "get": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "User Auto Login",
+        "description": "This API is used for doing auto login after email verification.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/verify": {
+      "post": {
+        "tags": [
+          "User Email and Mobile No Verification"
+        ],
+        "summary": "Email Verification on Mobile.",
+        "description": "This API verfies email on Mobile device.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "description": "Enter User Id (Base 64 encoded)",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "verification_code",
+            "description": "Enter Verification Code",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/verifyMobile": {
+      "post": {
+        "tags": [
+          "User Email and Mobile No Verification"
+        ],
+        "summary": "Mobile No Verification.",
+        "description": "This API verfies mobile number.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sms_otp",
+            "description": "Enter OTP",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/verifyMobileWeb": {
+      "post": {
+        "tags": [
+          "User Email and Mobile No Verification"
+        ],
+        "summary": "Mobile No Verification.",
+        "description": "This API verfies mobile number.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "sms_otp",
+            "description": "Enter OTP",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/resendEmail": {
+      "get": {
+        "tags": [
+          "User Email and Mobile No Verification"
+        ],
+        "summary": "User Email Verification",
+        "description": "This API is used for sending email for verification.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/resendSMS": {
+      "get": {
+        "tags": [
+          "User Email and Mobile No Verification"
+        ],
+        "summary": "User Mobile No Verification",
+        "description": "This API is used for sending otp to mobile for verification.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/changeNumber": {
+      "post": {
+        "tags": [
+          "User Email and Mobile No Verification"
+        ],
+        "summary": "Glossaread-SMS",
+        "description": "This API is used for changing mobile no of user.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "mobile",
+            "description": "Enter Mobile No",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/profile": {
+      "put": {
+        "tags": [
+          "Update User Data"
+        ],
+        "summary": "Update about yourself.",
+        "description": "Here, Customer can update his/her profile.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "profile_image",
+            "description": "Upload Profile Image ",
+            "in": "formData",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "name": "full_name",
+            "description": "Enter Full Name",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "birthdate",
+            "description": "Enter DOB (YYYY-MM-DD)",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "gender",
+            "description": "Enter Gender (Male: 1, Female: 2)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/forgotPassword": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Forgot password.",
+        "description": "Here, User can create his/her new password, if he/she has forgotten.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "description": "Enter Your registered email",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/recoverForgotPassword": {
+      "post": {
+        "tags": [
+          "POST User Data"
+        ],
+        "summary": "Recover your password.",
+        "description": "Here, User can recover his/her password.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "forget_password_code",
+            "description": "Enter OTP",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "newPass",
+            "description": "Enter New Password",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "confirmPass",
+            "description": "Enter Password again",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/redisBooks": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Store Book in Redis (Used by admin)",
+        "description": "This API is used for storing book details in Redis cache.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "currency",
+            "description": "Enter Currency value (INR, USD)",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/redisChapterPrices": {
+      "post": {
+        "tags": [
+          "Cron Jobs"
+        ],
+        "summary": "Store Chapter Prices in Redis (Used by admin)",
+        "description": "This API is used for storing chapter prices in Redis cache.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "description": "Enter token value",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getAllBooks": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Books (Not in use)",
+        "description": "This API gives a list of all Books. (Not in use)",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter Book Id",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "author_id",
+            "description": "Enter Author Id",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "category_id",
+            "description": "Enter Category Id",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "publisher_id",
+            "description": "Enter Publisher Id",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "start_price",
+            "description": "Enter Start Price",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "end_price",
+            "description": "Enter End Price",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "currency_id",
+            "description": "Enter Currency ID",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "pageNo",
+            "description": "Enter Page Number",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "perPage",
+            "description": "Enter Size Value",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/library": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Book Library",
+        "description": "This API get My Library details",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getPopularBooks": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Popular Books",
+        "description": "This API gives a list of Popular Books",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getSimilarBooks": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Similar Books",
+        "description": "This API gives a list of Similar Books",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter Book Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "parent_category_id",
+            "description": "Enter Parent Category Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getBooksCategories": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Books Categories",
+        "description": "This API gives a list of Categories of Books",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter Parent Category id",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getChapterPrices": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Chapter prices",
+        "description": "This API gives a list of prices of Chapters",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "article_id",
+            "description": "Enter Article id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getBooksPublishers": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Books Publishers",
+        "description": "This API gives a list of Publishers of Books",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getInitialBooksByCategories": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Books by Categories",
+        "description": "This API gives a list of Books by Category",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "currency_id",
+            "description": "Enter Currency (INR:- 1, USD:- 2)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pageNo",
+            "description": "Enter Page Number",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "perPage",
+            "description": "Enter Size Value",
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getBooksAuthors": {
+      "get": {
+        "tags": [
+          "Get Books List"
+        ],
+        "summary": "Books Authors",
+        "description": "This API gives a list of Authors of Books",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/cart": {
+      "post": {
+        "tags": [
+          "Books Cart"
+        ],
+        "summary": "Books Cart",
+        "description": "This API add Books in cart",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "article_id",
+            "description": "Enter Book Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "chapter_id",
+            "description": "Enter Chapter id (Ex:1,2)",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "currency_id",
+            "description": "Enter Currency id (Ex: 1 or 2)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/removeFromCart": {
+      "delete": {
+        "tags": [
+          "Books Cart"
+        ],
+        "summary": "Books Cart",
+        "description": "This API remove Books from cart",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "article_id",
+            "description": "Enter Book Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "chapter_id",
+            "description": "Enter Chapter id (Set 0 when book is deleted)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getFromCart": {
+      "get": {
+        "tags": [
+          "Books Cart"
+        ],
+        "summary": "Books Cart",
+        "description": "This API get Books from cart",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/wishlist": {
+      "post": {
+        "tags": [
+          "Books WishList"
+        ],
+        "summary": "User Wishlist (API used for adding and removing favourites)",
+        "description": "This API updates user favourites books.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "article_id",
+            "description": "Enter Book Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "chapter_id",
+            "description": "Enter Chapters Id (Set 0 when book is removed from favourite)",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "is_disable",
+            "description": "Disbale wishlist (Default 0, For disbale wishlist enter 1)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getWishList": {
+      "get": {
+        "tags": [
+          "Books WishList"
+        ],
+        "summary": "Books Favourites",
+        "description": "This API get Favourites Books",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/orders": {
+      "get": {
+        "tags": [
+          "Order Details"
+        ],
+        "summary": "Orders",
+        "description": "This API get Order details",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/postRatingAndComments": {
+      "post": {
+        "tags": [
+          "Books Rating"
+        ],
+        "summary": "Books Rating",
+        "description": "This API add ratings of Books and Chapters",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "article_id",
+            "description": "Enter Book Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "chapter_id",
+            "description": "Enter Chapter id (Should be 0 when book is being rated)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "review_comment",
+            "description": "Enter Article or Chapter Comments",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "rate_value",
+            "description": "Enter Article or Chapter Rating",
+            "in": "formData",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "name": "is_rate",
+            "description": "Enter Flag (Rating: 1 , Comments: 0, Both: 2)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getRatingAndComments": {
+      "get": {
+        "tags": [
+          "Books Rating"
+        ],
+        "summary": "Get Rate value and Review Comments of books and chapters",
+        "description": "This API gives a rating value and review comments of books and chapters.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "article_id",
+            "description": "Enter Book Id (Ex:- 1,2)",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/payLater": {
+      "get": {
+        "tags": [
+          "Payment Module"
+        ],
+        "summary": "Pricing Model",
+        "description": "This API gives a list of prices according to package.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/buyNow": {
+      "post": {
+        "tags": [
+          "Payment Module"
+        ],
+        "summary": "Payment Gateway",
+        "description": "This API gives a Base configuration details for payment..",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "amount",
+            "description": "Enter Amount",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/swipe": {
+      "post": {
+        "tags": [
+          "Payment Module"
+        ],
+        "summary": "Payment Gateway",
+        "description": "This API gives a Base configuration details for payment..",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "orderAmount",
+            "description": "Enter Order Amount",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "orderCurrency",
+            "description": "Enter Order Currency",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/razorPay": {
+      "post": {
+        "tags": [
+          "Payment Module"
+        ],
+        "summary": "Payment Gateway",
+        "description": "This API gives a Base configuration details for payment..",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "razorAmount",
+            "description": "Enter Razor Amount (Value should be > 0)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "actualAmount",
+            "description": "Enter Order Amount",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "currency",
+            "description": "Enter Order Currency",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "article_array",
+            "description": "This will be used when books are being purchased.(Try using front-end)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "package_id",
+            "description": "Enter Package Id (Value should be 0 if you are going to pay for books.)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "package_month",
+            "description": "Enter Package Month Id (Value should be 0 if you are going to pay for books.)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "coupon_id",
+            "description": "Enter Coupon Id (Default 0)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "refer_coupon_code",
+            "description": "Enter Coupon Id (Default 0)",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "reward_point_used",
+            "description": "Enter Reward Points (Default 0)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/webHookGlossaread": {
+      "post": {
+        "tags": [
+          "Payment Module"
+        ],
+        "summary": "Payment Gateway (Used by Payment Gateway, don't try it own)",
+        "description": "This API gives a Base configuration details for payment..",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/coupon": {
+      "post": {
+        "tags": [
+          "Payment Module"
+        ],
+        "summary": "Promo Code",
+        "description": "This API is used to apply promo codes.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "coupon_code",
+            "description": "Enter Coupon Code",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/transaction": {
+      "post": {
+        "tags": [
+          "Payment Module"
+        ],
+        "summary": "Transaction Details",
+        "description": "This API updates transaction details in DB.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "trans_id",
+            "description": "Enter Unique id of Transaction",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "referenceId",
+            "description": "Enter Transaction Id",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "article_array",
+            "description": "This will be used when books are being purchased.(Try using front-end)",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "razorpay_payment_id",
+            "description": "Enter Payment Id",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "razorpay_order_id",
+            "description": "Enter Order Id",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "paymentMode",
+            "description": "Enter Payment Type",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "txStatus",
+            "description": "Enter Status",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "txTime",
+            "description": "Enter Transaction Date",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "orderAmount",
+            "description": "Enter Amount",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "txMsg",
+            "description": "Enter Response Message",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "response_email",
+            "description": "Enter Response Email",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getWebCourseDetails": {
+      "get": {
+        "tags": [
+          "Get Course List"
+        ],
+        "summary": "Course (Guest User)",
+        "description": "This API gives a list of all Course Details.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "university_id",
+            "description": "Enter University Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "college_id",
+            "description": "Enter College Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "course_id",
+            "description": "Enter Course Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "stream_id",
+            "description": "Enter Stream Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "year_id",
+            "description": "Enter Year Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "semester_id",
+            "description": "Enter Semester Id (For Year based Course Set value -1)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getCourseDetails": {
+      "get": {
+        "tags": [
+          "Get Course List"
+        ],
+        "summary": "Course",
+        "description": "This API gives a list of all Course Details.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getContentListing": {
+      "get": {
+        "tags": [
+          "Get Course List"
+        ],
+        "summary": "Course",
+        "description": "This API gives a list of all Content List.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "description": "Enter Content Name",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getAllQuestions": {
+      "get": {
+        "tags": [
+          "Get Course List"
+        ],
+        "summary": "All Questions",
+        "description": "This API gives a list of all Content List.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hasAllQuestions",
+            "description": "Enable or Disable hasAllQuestions",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getReadContent/{subject_id}/{content_id}/{article_id}/{chapter_id}/{page_no}/{st}/{is_web}/{is_epub}": {
+      "get": {
+        "tags": [
+          "Get Content for reading"
+        ],
+        "summary": "Readable Content",
+        "description": "This API gives a content for reading.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "article_id",
+            "description": "Enter Article Id (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "chapter_id",
+            "description": "Enter Chapter Id (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page_no",
+            "description": "Enter Page No (Default value 0)",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "st",
+            "description": "Enter Session Token (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "is_web",
+            "description": "Enter check for Mobile or Web (For Android: false, For Web: true)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "is_epub",
+            "description": "Enter check for EPUB file (Default: false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/canRead": {
+      "get": {
+        "tags": [
+          "Get Content for reading"
+        ],
+        "summary": "Readable Content",
+        "description": "This API gives a content for reading.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getContentCount/{subject_id}/{content_id}/{article_id}/{chapter_id}/{st}": {
+      "get": {
+        "tags": [
+          "Get Content for reading"
+        ],
+        "summary": "Readable Content Count",
+        "description": "This API gives a content for reading.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "article_id",
+            "description": "Enter Article Id (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "chapter_id",
+            "description": "Enter Chapter Id (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "st",
+            "description": "Enter Session Token (Default value false)",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/updateReadStatus": {
+      "put": {
+        "tags": [
+          "Get Course List"
+        ],
+        "summary": "Content Reading Status",
+        "description": "This API updates Content reading status in DB.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "read_status",
+            "description": "Enter Read Status value",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/syllabus": {
+      "get": {
+        "tags": [
+          "Get Course List"
+        ],
+        "summary": "Course",
+        "description": "This API gives a list of all Course Details.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getQuizTopics": {
+      "get": {
+        "tags": [
+          "Quiz Engine"
+        ],
+        "summary": "Get Quiz Topics",
+        "description": "This API gives a list of available topics for Quiz.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "is_sub_topic",
+            "description": "Enter Flag for Topic or sub topic(Topic:0, Sub-topic:1)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "topic_id",
+            "description": "Enter Topic Id (Send only when is_sub_topic = 1)",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getQuizStatus": {
+      "get": {
+        "tags": [
+          "Quiz Engine"
+        ],
+        "summary": "Get Status of Quiz",
+        "description": "This API gives a status of selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "topic_id",
+            "description": "Enter Topic Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/quizStart": {
+      "get": {
+        "tags": [
+          "Quiz Engine"
+        ],
+        "summary": "Get Questions for Quiz",
+        "description": "This API starts the quiz and give a set of questions associated with selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "topic_id",
+            "description": "Enter Topic Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "is_retake",
+            "description": "Do you want retake the Quiz (Enable: 1, Default: 0)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getLevels": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Get Test Levels",
+        "description": "This API gives a list of available levels.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getSubjectLevels": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Get Status of Level by Subject",
+        "description": "This API gives a status of selected level of each subject.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getLevelStatus": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Get Status of Level",
+        "description": "This API gives a status of selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getAllLevelStatus": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Get Status of All Level",
+        "description": "This API gives a status of all level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/restart": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Restart MCQ",
+        "description": "This API restarts individual level 5 times.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/startQuiz": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Get Questions for MCQ",
+        "description": "This API starts the quiz and give a set of questions associated with selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "is_retake",
+            "description": "Do you want retake the MCQ (Enable: 1, Default: 0)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/submitOption": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Check for Correct or Incorrect Option",
+        "description": "This API checks the option whether it is correct or incorrect or user skipped the question.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "question_id",
+            "description": "Enter Question Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "attempt_no",
+            "description": "Enter Attempt No",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "option",
+            "description": "Enter Selected Option (If user skips the question then enter 0 otherwise enter option value)",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "description": "Enter Skip Flag (If user skips the question then enter 1 otherwise enter 0)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/resumeQuiz": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Get Questions for MCQ",
+        "description": "This API resumes the quiz and give a set of questions associated with selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/completeQuiz": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "Complete MCQ",
+        "description": "This API completed the quiz and calculate the result of selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "attempt_no",
+            "description": "Enter Attempt No",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getResult": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "MCQ Result",
+        "description": "This API is used for fetching the results of MCQ.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "attempt_no",
+            "description": "Enter Attempt No",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getOverallResult": {
+      "get": {
+        "tags": [
+          "MCQ Engine"
+        ],
+        "summary": "MCQ Result",
+        "description": "This API is used for overall the results of MCQ.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getLevelsWeb": {
+      "get": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Get Test Levels",
+        "description": "This API gives a list of available levels.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getSubjectLevelsWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Get Status of Level by Subject",
+        "description": "This API gives a status of selected level of each subject.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getLevelStatusWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Get Status of Level",
+        "description": "This API gives a status of selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getAllLevelStatusWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Get Status of All Level",
+        "description": "This API gives a status of all level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/restartWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Restart MCQ",
+        "description": "This API restarts individual level 5 times.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/startQuizWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Get Questions for MCQ",
+        "description": "This API starts the quiz and give a set of questions associated with selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "is_retake",
+            "description": "Do you want retake the MCQ (Enable: 1, Default: 0)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/submitOptionWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Check for Correct or Incorrect Option",
+        "description": "This API checks the option whether it is correct or incorrect or user skipped the question.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "question_id",
+            "description": "Enter Question Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "attempt_no",
+            "description": "Enter Attempt No",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "option",
+            "description": "Enter Selected Option (If user skips the question then enter 0 otherwise enter option value)",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "description": "Enter Skip Flag (If user skips the question then enter 1 otherwise enter 0)",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/resumeQuizWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Get Questions for MCQ",
+        "description": "This API resumes the quiz and give a set of questions associated with selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/completeQuizWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "Complete MCQ",
+        "description": "This API completed the quiz and calculate the result of selected level.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "attempt_no",
+            "description": "Enter Attempt No",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getResultWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "MCQ Result",
+        "description": "This API is used for fetching the results of MCQ.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "subject_id",
+            "description": "Enter Subject Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "content_id",
+            "description": "Enter Content Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "level_id",
+            "description": "Enter Level Id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "attempt_no",
+            "description": "Enter Attempt No",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    },
+    "/getOverallResultWeb": {
+      "post": {
+        "tags": [
+          "WEB MCQ Engine"
+        ],
+        "summary": "MCQ Result",
+        "description": "This API is used for overall the results of MCQ.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Enter User Id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation Successful"
+          },
+          "404": {
+            "description": "Operation Failed"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "users": {
+      "type": "object",
+      "required": [
+        "id",
+        "user_unique_id",
+        "user_group_id",
+        "first_name",
+        "middle_name",
+        "last_name",
+        "full_name",
+        "email",
+        "mobile",
+        "gender",
+        "birthdate",
+        "gi_user_id",
+        "verificaton_code",
+        "token",
+        "device_type",
+        "profile_image",
+        "is_active",
+        "is_verified"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_unique_id": {
+          "type": "string"
+        },
+        "user_group_id": {
+          "type": "integer"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "middle_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "full_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "gi_user_id": {
+          "type": "string"
+        },
+        "verificaton_code": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "device_type": {
+          "type": "integer"
+        },
+        "profile_image": {
+          "type": "string"
+        },
+        "is_active": {
+          "type": "integer"
+        },
+        "is_verified": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "token",
+      "in": "headers"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ]
+}
